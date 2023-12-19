@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/microservices-demo/microservices-demo.svg?branch=master)](https://travis-ci.org/microservices-demo/microservices-demo)
 
 # Happy-Sock Project Team member
+Hello Datascientest, DevOps Bootcamp participants!
 
 # DEPRECATED: Sock Shop : A Microservice Demo Application
 
