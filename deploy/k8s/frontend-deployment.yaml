@@ -22,4 +22,8 @@ spec:
           image: weaveworksdemos/front-end:0.3.12
           ports:
             - containerPort: 8079
+          securityContext:
+            capabilities:
+              drop: 
+                - all
 
