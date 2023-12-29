@@ -21,7 +21,7 @@ spec:
         - name: user
           image: weaveworksdemos/user:0.4.4
           ports:
-            - containerPort: 8079
+            - containerPort: 8080
           securityContext:
             capabilities:
               drop: 
