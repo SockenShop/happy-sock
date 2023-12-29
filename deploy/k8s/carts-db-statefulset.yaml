@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Statefulset
+metadata:
+  name: carts-db
+  namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: carts-db
+  serviceName: carts-db
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: carts-db
+    spec:
+      containers:
+        - name: carts-db
+          image: mongo:3.4
+          ports:
+            - containerPort: 27017
+              name: mongo
+          volumeMounts:
+            - mountPath: /data/db
+              name: carts-db-volume
+          securityContext:
+            capabilities:
+              drop: 
+                - all
+              add:
+                - CHOWN
+                - SETGID
+                - SETUID
+      volumes:
+        - name: carts-db-volume
+          persistentVolumeClaim:
+            claimName: carts-pvc
